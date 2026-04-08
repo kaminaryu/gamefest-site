@@ -7,7 +7,7 @@ import Events from "@/components/Events";
 import Sponsors from "@/components/Sponsors";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export default function Index() {
     return (
         <div className="relative min-h-screen" style={{ backgroundColor: "#05050A" }}>
             <div className="relative z-10">
@@ -23,5 +23,3 @@ const Index = () => {
         </div>
     );
 };
-
-export default Index;
