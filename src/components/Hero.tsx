@@ -20,15 +20,22 @@ export default function Hero() {
 
             {/* Tagline */}
             <p
-                className="font-body text-xl md:text-2xl font-light tracking-wider mb-4 max-w-xl mx-auto hero-enter"
+                className="font-body text-2xl md:text-3xl font-light tracking-wider mb-0 max-w-xl mx-auto hero-enter"
                 style={{ color: "rgba(241, 245, 249, 0.7)", animationDelay: "0.6s" }}
             >
-            The First Game Development Festival in IIUM
+                The First Game Festival in IIUM
             </p>
+            <p
+                className="font-body text-lg md:text-xl font-light tracking-wider mb-4 max-w-xl mx-auto hero-enter"
+                style={{ color: "rgba(241, 245, 249, 0.7)", animationDelay: "0.6s" }}
+            >
+                By GDGoC IIUM
+            </p>
+
 
             {/* Date + Location */}
             <p
-                className="font-heading text-xs md:text-sm tracking-[0.4em] uppercase mb-10 hero-enter"
+                className="font-heading text-md md:text-md tracking-[0.4em] uppercase mb-10 hero-enter"
                 style={{ color: "rgba(168, 85, 247, 0.6)", animationDelay: "0.8s" }}
             >
                 May 08 – 15, 2026 
