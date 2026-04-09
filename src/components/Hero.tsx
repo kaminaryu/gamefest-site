@@ -2,6 +2,7 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
+
         {/* Subtle grid overlay */}
         <div
             className="absolute inset-0 opacity-[0.02]"
@@ -13,6 +14,11 @@ export default function Hero() {
         />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <p className="inline-block text-3xl tracking-[0.3em] uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-8"> 
+                <span className="text-3xl animate-pulse"> ✦ </span>
+                Create. Play. Innovate.
+                <span className="text-3xl animate-pulse"> ✦ </span>
+            </p>
 
             <div className="relative inline-block">
                 <img src='/gameFestLogo.png' alt="GameFest" />

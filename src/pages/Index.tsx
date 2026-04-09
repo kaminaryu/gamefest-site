@@ -3,9 +3,10 @@ import Hero from "@/components/Hero";
 import Gdgoc from "@/components/Gdgoc";
 import About from "@/components/About";
 import FestivalInfo from "@/components/FestivalInfo";
-import Events from "@/components/Events";
+import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
 import Footer from "@/components/Footer";
+import Competitions from "@/components/Competitions";
 
 export default function Index() {
     return (
@@ -16,7 +17,8 @@ export default function Index() {
                 <Gdgoc />
                 <About />
                 <FestivalInfo />
-                <Events />
+                <Workshops />
+                <Competitions />
                 <Sponsors />
                 <Footer />
             </div>
