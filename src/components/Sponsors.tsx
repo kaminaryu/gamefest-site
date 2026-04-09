@@ -37,7 +37,7 @@ const Sponsors = () => {
         <section id="sponsors" className="relative py-24 md:py-32" ref={ref}>
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle>
-                    Our <span className="text-neon-purple">Partners</span>
+                    Our <span className="text-neon-cyan">Partners</span>
                 </SectionTitle>
                 
 

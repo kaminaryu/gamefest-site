@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import SectionTitle from "./homepage/sectionTitle";
 
 const infoCards = [
-    { icon: "📅", title: "Phase 1", detail: "May 08–15, 2026", sub: "Workshop and Competiton Phase" },
+    { icon: "📅", title: "Phase 1", detail: "May 08–15, 2026", sub: "Workshop and Competiton Week" },
     { icon: "📅", title: "Phase 2", detail: "May 16, 2026", sub: "Exhibition Day" },
     { icon: "📍", title: "Venue", detail: "Khulliyah ICT", sub: "IIUM Gombak, Selangor" },
     { icon: "🕐", title: "Time", detail: "Game starts 09:00", sub: "Play until 18:00" },
