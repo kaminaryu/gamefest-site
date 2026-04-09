@@ -39,8 +39,7 @@ const About = () => {
                                 Promoting GameDev Culture
                             </h3>
                             <p className="text-center font-body text-md text-muted-foreground leading-relaxed">
-                                Fostering a vibrant community of student developers and encouraging the growth of 
-                                game design skills on campus.
+                                To foster a vibrant community of student developers and encourage the growth of game design skills on campus.
                             </p>
                         </div>
 
@@ -49,8 +48,8 @@ const About = () => {
                                 Raising Sector Awareness
                             </h3>
                             <p className="flex justify-center text-center font-body text-md text-muted-foreground leading-relaxed">
-                                Highlighting the diverse and multidisciplinary nature of the creative multimedia sector — 
-                                not just coding, but arts, music, and creative production.
+                                To highlight the diverse and multidisciplinary nature of the creative multimedia sector 
+                                that involves not just coding, but also arts, music, and creative production.
                             </p>
                         </div>
                     </div>
