@@ -21,7 +21,7 @@ const events: EventItem[] = [
         time: "09:00 — 17:00",
         description: "Build a Python AI that learns to play games by itself interactively.",
         category: ["Intermediate"],
-        thumbnail: "logos/PYXEL.png",
+        thumbnail: "logos/events/PYXEL.png",
     },
     { 
         name: "HelloGame",
@@ -31,7 +31,7 @@ const events: EventItem[] = [
         time: "09:00 — 17:00",
         description: "Learn game development with beginner and intermediate tracks, building playable games.",
         category: ["Beginner", "Intermediate"],
-        thumbnail: "logos/HelloGame.png",
+        thumbnail: "logos/events/HelloGame.png",
     },
     {
         name: "Modding Mayhem",
@@ -41,7 +41,7 @@ const events: EventItem[] = [
         time: "09:00 — 17:00",
         description: "Mastering the essence of minecraft modding skills via manipulating the game code using a visual tool.",
         category: ["Beginner"],
-        thumbnail: "logos/minecraft.png",
+        thumbnail: "logos/events/minecraft.png",
     },
 ];
 

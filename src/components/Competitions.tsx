@@ -19,7 +19,7 @@ const events: EventItem[] = [
         day: "Friday — Friday",
         time: "20:00",
         description: "Unleash your creativity and develop a game in under 7 days and show it to the world!",
-        thumbnail: "logos/GameJam.png",
+        thumbnail: "logos/events/GameJam.png",
     },
     {
         name: "OSU!Skinning",
@@ -28,7 +28,7 @@ const events: EventItem[] = [
         day: "Monday — Friday",
         time: "23:00",
         description: "Compete with other creative artists in crafting a custom skin for osu! the rhythm game!",
-        thumbnail: "logos/osu.png",
+        thumbnail: "logos/events/osu.png",
     },
 ];
 
