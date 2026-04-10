@@ -1,21 +1,69 @@
 import { useEffect, useRef } from "react";
 import SectionTitle from "./homepage/sectionTitle";
+import InfiniteCarousel from "./homepage/infiniteCarousel";
+
+// interface Sjponsor {
+//     name: string;
+//     tier: "platinum" | "gold";
+// }
+
+
+// const sponsorss: Sponsor[] = [
+//     { name: "HYPERDRIVE", tier: "platinum" },
+//     { name: "QUANTUM AUDIO", tier: "platinum" },
+//     { name: "NEONLABS", tier: "gold" },
+//     { name: "SYNTHWAVE CO", tier: "gold" },
+//     { name: "VOID SYSTEMS", tier: "gold" },
+//     { name: "PULSE ENERGY", tier: "gold" },
+// ];
 
 interface Sponsor {
-    name: string;
-    tier: "platinum" | "gold";
+    name: string,
+    url:string,
+    tier: "platinum" | "gold" | "silver",
+    src: string,
+}
+
+interface Partner {
+    name: string,
+    src: string,
+    alt: string,
 }
 
 const sponsors: Sponsor[] = [
-    { name: "HYPERDRIVE", tier: "platinum" },
-    { name: "QUANTUM AUDIO", tier: "platinum" },
-    { name: "NEONLABS", tier: "gold" },
-    { name: "SYNTHWAVE CO", tier: "gold" },
-    { name: "VOID SYSTEMS", tier: "gold" },
-    { name: "PULSE ENERGY", tier: "gold" },
+    {
+        name: "SEAGM", url: "https://www.seagm.com/", tier: "platinum",
+        src: "logos/sponsors/seagm-nobg.png"
+    },
+    {
+        name: "DeTA Technologies", url: "https://www.deta.com.my", tier: "gold",
+        src: "logos/sponsors/DeTA.svg"
+    },
+    {
+        name: "Keychron", url: "https://www.keychron.com", tier: "gold",
+        src: "logos/sponsors/keychron.png"
+    },
+    {
+        name: "AZP", url: "https://www.azpgroup.org/", tier: "silver",
+        src: "logos/sponsors/azp.png"
+    },
+    {
+        name: "Here Be Dragons", url: "https://www.herebedragonsgames.com/", tier: "silver",
+        src: "logos/sponsors/hbd.png"
+    },
+]
+
+const partners: Partner[] = [
+  { name: "react",  src: "/logos/events/minecraft.png", alt: "minecraft" },
+  { name: "vue",    src: "/logos/events/HelloGame.png", alt: "HelloGame" },
+  { name: "next",   src: "/logos/events/osu.png",       alt: "osu!" },
+  { name: "react",  src: "/logos/events/minecraft.png", alt: "minecraft" },
+  { name: "vue",    src: "/logos/events/HelloGame.png", alt: "HelloGame" },
+  { name: "next",   src: "/logos/events/osu.png",       alt: "osu!" },
+  // add as many as you want
 ];
 
-const Sponsors = () => {
+export default function Sponsors() {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -32,65 +80,110 @@ const Sponsors = () => {
 
     const platinum = sponsors.filter((s) => s.tier === "platinum");
     const gold = sponsors.filter((s) => s.tier === "gold");
+    const silver = sponsors.filter((s) => s.tier === "silver");
 
     return (
         <section id="sponsors" className="relative py-24 md:py-32" ref={ref}>
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle>
-                    Our <span className="text-neon-cyan">Partners</span>
+                    Special <span className="bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text"> Thanks </span> To
                 </SectionTitle>
                 
 
                 {/* Platinum tier */}
                 <div className="mb-6 animate-on-scroll">
-                    <div className="flex items-center gap-4 mb-8 justify-center">
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.3))" }} />
-                            <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-purple/70">
-                                Platinum
-                            </span>
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.3))" }} />
-                    </div>
+                    {/* The Cards */}
                     <div className="flex flex-wrap justify-center gap-6">
-                        {platinum.map((s) => (
-                        <a
-                            key={s.name}
-                            href="#"
-                            className="glass-panel shimmer-sweep glow-cyan-strong px-12 py-8 text-center hover:-translate-y-2 transition-all duration-500 min-w-[220px]"
-                        >
-                            <span className="font-heading text-xl md:text-2xl font-bold tracking-[0.2em] text-foreground">
-                            {s.name}
-                            </span>
-                        </a>
+                        {platinum.map((sponsor) => (
+                            <a
+                                key={sponsor.name}
+                                href={sponsor.url}
+                                className="flex flex-col justify-center items-center w-96 glass-panel-light shimmer-sweep glow-cyan-strong px-12 py-8 text-center hover:-translate-y-2 transition-all duration-500 min-w-[220px]"
+                            >
+                                <img src={sponsor.src} alt={sponsor.name} className="h-24 w-auto mx-auto mb-4"/>
+
+                                <span className="font-heading text-sm md:text-3xl font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
+                                    {sponsor.name}
+                                </span>
+                            </a>
                         ))}
                     </div>
                 </div>
 
                 {/* Gold tier */}
                 <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
+                    {/* The Title */}
                     <div className="flex items-center gap-4 mb-8 justify-center mt-12">
                         <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(6, 182, 212, 0.3))" }} />
                             <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-cyan/70">
-                                Gold
+                                In Collaborations With
                             </span>
                         <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(6, 182, 212, 0.3))" }} />
                     </div>
+
+                    {/* The Cards */}
                     <div className="flex flex-wrap justify-center gap-5">
-                        {gold.map((s) => (
-                        <a
-                            key={s.name}
-                            href="#"
-                            className="glass-panel-light shimmer-sweep glow-cyan px-8 py-5 text-center hover:-translate-y-1 transition-all duration-500"
-                        >
-                            <span className="font-heading text-sm md:text-base font-semibold tracking-[0.15em] text-foreground/80">
-                            {s.name}
-                            </span>
-                        </a>
+                        {gold.map((sponsor) => (
+                            <a
+                                key={sponsor.name}
+                                href={sponsor.url}
+                                className="w-72 px-2 py-6 glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
+                            >
+                                <img src={sponsor.src} alt={sponsor.name} className="h-20 w-full mx-auto object-contain "/>
+
+                                <span className="h-6 font-heading text-sm md:text-lg mt-4 font-semibold tracking-[0.15em] text-foreground/80 block flex items-center justify-center">
+                                    {sponsor.name}
+                                </span>
+                            </a>
                         ))}
                     </div>
+                </div>
+
+                {/* Gold tier */}
+                <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
+                    {/* The Title */}
+                    <div className="flex items-center gap-4 mb-8 justify-center mt-12">
+                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(6, 182, 212, 0.3))" }} />
+                            <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-cyan/70">
+                                With Supports From
+                            </span>
+                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(6, 182, 212, 0.3))" }} />
+                    </div>
+
+                    {/* The Cards */}
+                    <div className="flex flex-wrap justify-center gap-5">
+                        {silver.map((sponsor) => (
+                            <a
+                                key={sponsor.name}
+                                href={sponsor.url}
+                                className="w-36 px-8 py-4  glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
+                            >
+                                <img src={sponsor.src} alt={sponsor.name} className="h-16 w-full mx-auto object-contain"/>
+
+                                {/* <span className="font-heading text-sm md:text-base font-semibold tracking-[0.15em] text-foreground/80"> */}
+                                <span className="font-heading text-sm md:text-md mt-4 font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
+                                    {sponsor.name}
+                                </span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Silver Tier */}
+                <div className="flex items-center gap-4 mb-8 justify-center mt-12">
+                    <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.3))" }} />
+                        <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-purple/70">
+                            In Partnership With
+                        </span>
+                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.3))" }} />
+                </div>
+                <div className="flex justify-center">
+                    <InfiniteCarousel
+                        items={partners}
+                        config={{ width: 400, speed: 67 }}
+                    />
                 </div>
             </div>
         </section>
     );
-};
-
-export default Sponsors;
+}
