@@ -23,10 +23,7 @@ export default function Gdgoc() {
             <div className="max-w-6xl mx-auto px-6 relative z-10">
 
                 <SectionTitle>
-                    Meet The <span className={gradientText}> 
-                        Organizers
-                    </span>
-
+                    Meet The <span className={gradientText}> Organizers </span>
                 </SectionTitle>
 
                 <div className="flex flex-col justify-center aign-center glass-panel shimmer-sweep p-10 md:p-10 animate-on-scroll">
