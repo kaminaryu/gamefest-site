@@ -18,7 +18,7 @@ const About = () => {
 
     return (
         <section id="about" className="relative py-24 md:py-32" ref={ref}>
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
 
                 <SectionTitle>
                     What is <span className="text-neon-cyan"> GameFest? </span>
@@ -44,7 +44,7 @@ const About = () => {
                         </div>
 
                         <div className="glass-panel p-6 animate-on-scroll" style={{ transitionDelay: "200ms" }}>
-                            <h3 className="flex justify-center font-heading text-lg tracking-[0.2em] uppercase text-neon-cyan mb-3">
+                            <h3 className="text-center font-heading text-lg tracking-[0.2em] uppercase text-neon-cyan mb-3">
                                 Raising Sector Awareness
                             </h3>
                             <p className="flex justify-center text-center font-body text-md text-muted-foreground leading-relaxed">
