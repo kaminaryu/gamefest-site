@@ -66,7 +66,7 @@ export default function Events() {
     }, []);
 
     return (
-        <section id="events" className="relative py-24 md:pt-32 pb-16" ref={ref}>
+        <section id="events" className="relative  md:pt-32" ref={ref}>
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle>
                     The <span className="text-neon-cyan"> Workshops </span>
