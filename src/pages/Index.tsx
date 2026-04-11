@@ -11,7 +11,7 @@ import Competitions from "@/components/Competitions";
 export default function Index() {
     return (
         <div className="relative min-h-screen " style={{ backgroundColor: "#05050A" }}>
-            <div className="absolute inset-0 opacity-10 bg-[url('/neonBG.jpg')] bg-cover bg-fixed bg-center" />
+            <div className="absolute inset-0 opacity-20 bg-[url('/neonBG.jpg')] bg-cover bg-fixed bg-center" />
 
             <div className="relative z-10">
                 <Navbar />

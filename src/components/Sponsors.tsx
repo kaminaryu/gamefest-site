@@ -17,15 +17,15 @@ export interface Partner {
 const sponsors: Sponsor[] = [
     {
         name: "SEAGM", url: "https://www.seagm.com/", tier: "platinum",
-        src: "logos/sponsors/seagm-nobg.png"
+        src: "logos/sponsors/seagm_white.png"
     },
     {
         name: "DeTA Technologies", url: "https://www.deta.com.my", tier: "gold",
-        src: "logos/sponsors/DeTA.svg"
+        src: "logos/sponsors/DeTA_white.png"
     },
     {
         name: "Keychron", url: "https://www.keychron.com", tier: "gold",
-        src: "logos/sponsors/keychron.png"
+        src: "logos/sponsors/keychron_white.png"
     },
     {
         name: "AZP Group", url: "https://www.azpgroup.org/", tier: "silver",

@@ -11,6 +11,7 @@ interface EventItem {
     time: string;
     description: string;
     thumbnail: string;
+    thumbnailSize?: string;
 }
 
 const events: EventItem[] = [
@@ -22,6 +23,7 @@ const events: EventItem[] = [
         time: "20:00",
         description: "Unleash your creativity and develop a game in under 7 days and show it to the world!",
         thumbnail: "logos/events/GameJam.png",
+        thumbnailSize: "50%",
     },
     {
         name: "OSU!Skinning",
@@ -31,6 +33,7 @@ const events: EventItem[] = [
         time: "23:00",
         description: "Compete with other creative artists in crafting a custom skin for osu! the rhythm game!",
         thumbnail: "logos/events/osu.png",
+        thumbnailSize: "40%",
     },
 ];
 
@@ -73,9 +76,18 @@ function Card({event}: {event: EventItem}) {
     return (
         <div
             key={event.name}
-            className="min-w-[400px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer"
+            className="
+                relative min-w-[400px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple
+                transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer
+            "
         >
-            <img src={event.thumbnail} alt={event.thumbnail} className="absolute top-4 right-4 w-24 h-auto object-contain" />
+            <div 
+                style={{
+                    backgroundImage: `url(${event.thumbnail})`,
+                    backgroundSize: event.thumbnailSize ?? "80%",
+                }}
+                className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
+            />
 
             <span className="inline-block rounded-full p-[2px] bg-gradient-to-r from-neon-purple to-neon-cyan mb-2 mr-2">
                 <span className={`block font-heading text-[12px] tracking-[0.2em] uppercase rounded-full px-3 py-1 bg-black`}>
@@ -93,13 +105,13 @@ function Card({event}: {event: EventItem}) {
             </h6>
 
 
-            <p className="font-heading text-lg tracking-[0.2em] text-neon-purple/60 mb-1">
+            <p className="font-heading text-lg tracking-[0.2em] text-neon-purple mb-1">
                 {event.date}
             </p>
-            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan/60 mb-1">
+            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-1">
                 {event.day}
             </p>
-            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan/60 mb-3">
+            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-3">
                 {event.time}
             </p>
 
