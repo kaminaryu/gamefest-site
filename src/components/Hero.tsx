@@ -14,11 +14,15 @@ export default function Hero() {
         />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <p className="text-xl md:text-3xl tracking-[0.15em] md:tracking-[0.3em] uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-8 text-center">
-                <span className="text-xl md:text-3xl animate-pulse"> ✦ o</span>
-                    Create. Play. Innovate.
-                <span className="text-xl md:text-3xl animate-pulse"> ✦ </span>
-            </p>
+            <div className="flex justify-center gap-4">
+                <span className="text-xl md:text-3xl animate-pulse text-neon-purple"> ✦ </span>
+
+                <p className="text-xl md:text-3xl tracking-[0.15em] pl-[0.15em] md:tracking-[0.3em] md:pl-[0.15em] uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-8 text-center">
+                        Create. Play. Innovate.
+                </p>
+
+                <span className="text-xl md:text-3xl animate-pulse text-neon-cyan"> ✦ </span>
+            </div>
 
             <div className="relative inline-block">
                 <img src='/gameFestLogo.png' alt="GameFest" />
@@ -41,8 +45,8 @@ export default function Hero() {
 
             {/* Date + Location */}
             <p
-                className="text-md md:text-xl tracking-[0.4em] uppercase mb-10 hero-enter font-semibold"
-                style={{ color: "rgba(168, 85, 247, 0.6)", animationDelay: "0.8s" }}
+                className="text-md md:text-xl tracking-[0.4em] uppercase mb-10 hero-enter font-semibold text-neon-purple"
+                style={{ animationDelay: "0.8s" }}
             >
                 May 08 – 15, 2026 
                 <br /> <p className="mb-2" />
