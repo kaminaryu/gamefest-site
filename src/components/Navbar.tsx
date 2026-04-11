@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
             scrolled
-            ? "glass-panel border-b py-3"
+            ? "glass-panel-light border-b py-3"
             : "bg-transparent py-5"
         }`}
         style={scrolled ? { borderColor: "rgba(168, 85, 247, 0.1)" } : {}}
@@ -51,9 +51,9 @@ export default function Navbar() {
                 <div className="flex-1 flex justify-end">
                     <a
                         href="#events"
-                        className="btn-glow text-xs py-2 px-5 hidden md:inline-block"
+                        className="btn-glow text-xs py-2 px-5 md:inline-block"
                     >
-                        Join Event
+                        Join Events
                     </a>
                 </div>
             </div>
