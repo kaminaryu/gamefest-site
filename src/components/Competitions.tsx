@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionTitle from "./homepage/sectionTitle";
+import EventPoster from "./homepage/EventPoster";
 
 const gradientTextOnHover: string = "bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-neon-purple group-hover:to-neon-cyan";
 
@@ -12,6 +13,8 @@ interface EventItem {
     description: string;
     thumbnail: string;
     thumbnailSize?: string;
+    posterSrc: string;
+    url: string;
 }
 
 const events: EventItem[] = [
@@ -24,6 +27,8 @@ const events: EventItem[] = [
         description: "Unleash your creativity and develop a game in under 7 days and show it to the world!",
         thumbnail: "logos/events/GameJam.png",
         thumbnailSize: "50%",
+        posterSrc: "posters/gdgamejam.jpeg",
+        url: "https://forms.gle/9csPh21ejqX4P6mc8",
     },
     {
         name: "OSU!Skinning",
@@ -34,6 +39,8 @@ const events: EventItem[] = [
         description: "Compete with other creative artists in crafting a custom skin for osu! the rhythm game!",
         thumbnail: "logos/events/osu.png",
         thumbnailSize: "40%",
+        posterSrc: "posters/osu.jpeg",
+        url: "https://forms.gle/Rw2sXPA9m6T2x9Vy9",
     },
 ];
 
@@ -54,7 +61,7 @@ export default function Competitions() {
 
     return (
         <section id="events" className="relative py-24 md:pt-32 pb-16" ref={ref}>
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 relative z-[10]">
                 <SectionTitle>
                     The <span className="text-neon-purple"> Competitions </span>
                 </SectionTitle>
@@ -73,51 +80,75 @@ export default function Competitions() {
 
 
 function Card({event}: {event: EventItem}) {
-    return (
-        <div
-            key={event.name}
-            className="
-                relative min-w-[400px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple
-                transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer
-            "
-        >
-            <div 
-                style={{
-                    backgroundImage: `url(${event.thumbnail})`,
-                    backgroundSize: event.thumbnailSize ?? "80%",
-                }}
-                className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
-            />
+    const [isPosterOpen, setIsPosterOpen] = useState(false);
 
-            <span className="inline-block rounded-full p-[2px] bg-gradient-to-r from-neon-purple to-neon-cyan mb-2 mr-2">
-                <span className={`block font-heading text-[12px] tracking-[0.2em] uppercase rounded-full px-3 py-1 bg-black`}>
-                    <span className={`bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text`}>
-                        Open For ALL
+    useEffect(() => {
+        document.body.style.overflow = isPosterOpen ? 'hidden' : '';
+    }, [isPosterOpen]);
+
+    return (
+        <>
+            {
+                isPosterOpen && 
+                    <EventPoster 
+                        setIsPosterOpen={setIsPosterOpen} src={event.posterSrc}
+                        url={event.url}
+                    />
+            }
+
+            <div
+                key={event.name}
+                className="
+                    relative min-w-[350px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple
+                    transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer
+                "
+                onClick={() => setIsPosterOpen(true)}
+            >
+                <div 
+                    style={{
+                        backgroundImage: `url(${event.thumbnail})`,
+                        backgroundSize: event.thumbnailSize ?? "80%",
+                    }}
+                    className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
+                />
+
+                <span className="inline-block rounded-full p-[2px] bg-gradient-to-r from-neon-purple to-neon-cyan mb-2 mr-2">
+                    <span className={`block font-heading text-[12px] tracking-[0.2em] uppercase rounded-full px-3 py-1 bg-black`}>
+                        <span className={`bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text`}>
+                            Open For ALL
+                        </span>
                     </span>
                 </span>
-            </span>
 
-            <h3 className={`font-heading text-3xl font-bold text-foreground transition-colors ${gradientTextOnHover}`}>
-                {event.name}
-            </h3>
-            <h6 className={`font-heading text-md font-bold text-muted-foreground mb-3 group-hover:text-muted-neon-purple transition-colors ${gradientTextOnHover}`}>
-                {event.subname}
-            </h6>
+                <h3 className={`font-heading text-3xl font-bold text-foreground transition-colors ${gradientTextOnHover}`}>
+                    {event.name}
+                </h3>
+                <h6 className={`font-heading text-md font-bold text-muted-foreground mb-3 group-hover:text-muted-neon-purple transition-colors ${gradientTextOnHover}`}>
+                    {event.subname}
+                </h6>
 
 
-            <p className="font-heading text-lg tracking-[0.2em] text-neon-purple mb-1">
-                {event.date}
-            </p>
-            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-1">
-                {event.day}
-            </p>
-            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-3">
-                {event.time}
-            </p>
+                <p className="font-heading text-lg tracking-[0.2em] text-neon-purple mb-1">
+                    {event.date}
+                </p>
+                <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-1">
+                    {event.day}
+                </p>
+                <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-3">
+                    {event.time}
+                </p>
 
-            <p className="font-body text-md text-muted-foreground leading-relaxed">
-                {event.description}
-            </p>
-        </div>
+                <p className="font-body text-md text-muted-foreground leading-relaxed">
+                    {event.description}
+                </p>
+
+                <p 
+                    className="mt-2 text-md md:text-lg font-semibold tracking-[0.15em]"
+                    style={{ color: "#87CEEB" }}
+                >
+                    &rarr; <span className="underline underline-offset-4"> learn more </span>
+                </p>
+            </div>
+        </>
     )
 }

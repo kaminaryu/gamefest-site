@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionTitle from "./homepage/sectionTitle";
+import EventPoster from "./homepage/EventPoster";
 
 interface EventItem {
     name: string;
@@ -11,6 +12,8 @@ interface EventItem {
     category: string[];
     thumbnail: string;
     thumbnailSize?: string;
+    posterSrc: string;
+    url: string;
 }
 
 const events: EventItem[] = [
@@ -24,6 +27,8 @@ const events: EventItem[] = [
         category: ["Intermediate"],
         thumbnail: "logos/events/PYXEL.png",
         thumbnailSize: "40%",
+        posterSrc: "posters/pyxel.jpeg",
+        url: "https://gdg.community.dev/e/mjzrjb/",
     },
     { 
         name: "HelloGame",
@@ -35,6 +40,8 @@ const events: EventItem[] = [
         category: ["Beginner", "Intermediate"],
         thumbnail: "logos/events/HelloGame.png",
         thumbnailSize: "60%",
+        posterSrc: "posters/hellogame.jpeg",
+        url: "https://gdg.community.dev/e/mgtmvh/",
     },
     {
         name: "Modding Mayhem",
@@ -46,6 +53,8 @@ const events: EventItem[] = [
         category: ["Beginner"],
         thumbnail: "logos/events/minecraft.png",
         thumbnailSize: "70%",
+        posterSrc: "posters/minecraft.jpeg",
+        url: "https://gdg.community.dev/e/mp9hmz",
     },
 ];
 
@@ -91,53 +100,77 @@ export default function Events() {
 //bg-[url('${event.thumbnail}')]
 
 function Card({event}: {event: EventItem}) {
+    const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = isPosterOpen ? 'hidden' : '';
+    }, [isPosterOpen]);
+
     return (
-        <div
-            key={event.name}
-            className="
-                relative min-w-[400px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple 
-                transition-all duration-500 hover:-translate-y-1 animate-on-scroll cursor-pointer
-            "
-        >
-            <div 
-                style={{
-                    backgroundImage: `url(${event.thumbnail})`,
-                    backgroundSize: event.thumbnailSize ?? "80%",
-                }}
-                className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
-            />
+        <>
+            {
+                isPosterOpen && 
+                    <EventPoster 
+                        setIsPosterOpen={setIsPosterOpen} 
+                        src={event.posterSrc}
+                        url={event.url}
+                    />
+            }
 
-            <div className="opacity-100">
-                {
-                    event.category.map((category) => (
-                        <span className={`inline-block font-heading text-[12px] tracking-[0.2em] uppercase border rounded-full px-3 py-1 mb-4 mr-2 ${categoryColor[category]}`}>
-                            {category}
-                        </span>
-                    ))
-                }
+            <div
+                key={event.name}
+                className="
+                    relative min-w-[350px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple 
+                    transition-all duration-500 hover:-translate-y-1 animate-on-scroll cursor-pointer
+                "
+                onClick={() => setIsPosterOpen(true)}
+            >
+                <div 
+                    style={{
+                        backgroundImage: `url(${event.thumbnail})`,
+                        backgroundSize: event.thumbnailSize ?? "80%",
+                    }}
+                    className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
+                />
 
-                <h3 className="font-heading text-3xl font-bold text-foreground group-hover:text-neon-purple transition-colors">
-                    {event.name}
-                </h3>
-                <h6 className="font-heading text-md font-bold text-muted-foreground mb-3 group-hover:text-neon-cyan transition-colors">
-                    {event.subname}
-                </h6>
+                <div className="opacity-100">
+                    {
+                        event.category.map((category) => (
+                            <span className={`inline-block font-heading text-[12px] tracking-[0.2em] uppercase border rounded-full px-3 py-1 mb-4 mr-2 ${categoryColor[category]}`}>
+                                {category}
+                            </span>
+                        ))
+                    }
 
-                <p className="font-heading text-lg tracking-[0.2em] text-neon-purple mb-1">
-                    {event.date}
-                </p>
-                <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-1">
-                    {event.day}
-                </p>
-                <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-3">
-                    {event.time}
-                </p>
+                    <h3 className="font-heading text-3xl font-bold text-foreground group-hover:text-neon-purple transition-colors">
+                        {event.name}
+                    </h3>
+                    <h6 className="font-heading text-md font-bold text-muted-foreground mb-3 group-hover:text-neon-cyan transition-colors">
+                        {event.subname}
+                    </h6>
 
+                    <p className="font-heading text-lg tracking-[0.2em] text-neon-purple mb-1">
+                        {event.date}
+                    </p>
+                    <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-1">
+                        {event.day}
+                    </p>
+                    <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan mb-3">
+                        {event.time}
+                    </p>
 
-                <p className="font-medium text-lg text-muted-foreground leading-relaxed">
-                    {event.description}
-                </p>
+                    <p className="font-medium text-lg text-muted-foreground leading-relaxed">
+                        {event.description}
+                    </p>
+
+                    <p 
+                        className="mt-2 text-md md:text-lg font-semibold tracking-[0.15em]"
+                        style={{ color: "#87CEEB" }}
+                    >
+                        &rarr; <span className="underline underline-offset-4"> learn more </span>
+                    </p>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
