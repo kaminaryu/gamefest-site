@@ -14,10 +14,10 @@ export default function Hero() {
         />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <p className="inline-block text-3xl tracking-[0.3em] uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-8"> 
-                <span className="text-3xl animate-pulse"> ✦ </span>
-                Create. Play. Innovate.
-                <span className="text-3xl animate-pulse"> ✦ </span>
+            <p className="text-xl md:text-3xl tracking-[0.15em] md:tracking-[0.3em] uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-8 text-center">
+                <span className="text-xl md:text-3xl animate-pulse"> ✦ o</span>
+                    Create. Play. Innovate.
+                <span className="text-xl md:text-3xl animate-pulse"> ✦ </span>
             </p>
 
             <div className="relative inline-block">
