@@ -26,7 +26,7 @@ export default function About() {
 
                 <div className="glass-panel shimmer-sweep p-10 md:p-12 animate-on-scroll">
                     <div className="flex justify-center">
-                        <p className="text-center font-body text-base md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mb-10 text-center">
+                        <p className="text-center font-body text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mb-10 text-center">
                             GameFest 2026 is the inaugural game festival hosted at the International Islamic University Malaysia (IIUM), 
                             organized by GDGOC IIUM. It serves as a premier platform to celebrate the intersection of 
                             technology, creativity, and gaming culture.
