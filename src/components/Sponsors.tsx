@@ -87,7 +87,7 @@ export default function Sponsors() {
                             >
                                 <img src={sponsor.src} alt={sponsor.name} className="h-24 w-auto mx-auto mb-4"/>
 
-                                <span className="font-heading text-sm md:text-3xl font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
+                                <span className="font-heading text-2xl md:text-3xl font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
                                     {sponsor.name}
                                 </span>
                             </a>
@@ -116,7 +116,7 @@ export default function Sponsors() {
                             >
                                 <img src={sponsor.src} alt={sponsor.name} className="h-20 w-full mx-auto object-contain "/>
 
-                                <span className="h-6 font-heading text-sm md:text-lg mt-4 font-semibold tracking-[0.15em] text-foreground/80 block flex items-center justify-center">
+                                <span className="h-6 font-heading text-md md:text-lg mt-4 font-semibold tracking-[0.15em] text-foreground/80 block flex items-center justify-center">
                                     {sponsor.name}
                                 </span>
                             </a>
