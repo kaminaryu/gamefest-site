@@ -2,21 +2,6 @@ import { useEffect, useRef } from "react";
 import SectionTitle from "./homepage/sectionTitle";
 import InfiniteCarousel from "./homepage/infiniteCarousel";
 
-// interface Sjponsor {
-//     name: string;
-//     tier: "platinum" | "gold";
-// }
-
-
-// const sponsorss: Sponsor[] = [
-//     { name: "HYPERDRIVE", tier: "platinum" },
-//     { name: "QUANTUM AUDIO", tier: "platinum" },
-//     { name: "NEONLABS", tier: "gold" },
-//     { name: "SYNTHWAVE CO", tier: "gold" },
-//     { name: "VOID SYSTEMS", tier: "gold" },
-//     { name: "PULSE ENERGY", tier: "gold" },
-// ];
-
 interface Sponsor {
     name: string,
     url:string,
@@ -24,10 +9,9 @@ interface Sponsor {
     src: string,
 }
 
-interface Partner {
+export interface Partner {
     name: string,
     src: string,
-    alt: string,
 }
 
 const sponsors: Sponsor[] = [
@@ -44,7 +28,7 @@ const sponsors: Sponsor[] = [
         src: "logos/sponsors/keychron.png"
     },
     {
-        name: "AZP", url: "https://www.azpgroup.org/", tier: "silver",
+        name: "AZP Group", url: "https://www.azpgroup.org/", tier: "silver",
         src: "logos/sponsors/azp.png"
     },
     {
@@ -54,13 +38,14 @@ const sponsors: Sponsor[] = [
 ]
 
 const partners: Partner[] = [
-  { name: "react",  src: "/logos/events/minecraft.png", alt: "minecraft" },
-  { name: "vue",    src: "/logos/events/HelloGame.png", alt: "HelloGame" },
-  { name: "next",   src: "/logos/events/osu.png",       alt: "osu!" },
-  { name: "react",  src: "/logos/events/minecraft.png", alt: "minecraft" },
-  { name: "vue",    src: "/logos/events/HelloGame.png", alt: "HelloGame" },
-  { name: "next",   src: "/logos/events/osu.png",       alt: "osu!" },
-  // add as many as you want
+    { name: "MDEC",   src: "/logos/partners/mdec.png", },
+    { name: "DICE MMU",   src: "/logos/partners/dicemmu.png", },
+    { name: "APU GDC",   src: "/logos/partners/apugdc.png", },
+    { name: "Dreamonaut",   src: "/logos/partners/dreamonaut.png", },
+    { name: "TODAK",   src: "/logos/partners/todak.png", },
+    { name: "Passion Replubic Games",   src: "/logos/partners/passionrepublic_square.png", },
+    { name: "Kaigan Games",   src: "/logos/partners/kaigangames.png", },
+    { name: "ICTSS",   src: "/logos/partners/ictss.png", },
 ];
 
 export default function Sponsors() {
@@ -180,7 +165,7 @@ export default function Sponsors() {
                 <div className="flex justify-center">
                     <InfiniteCarousel
                         items={partners}
-                        config={{ width: 400, speed: 67 }}
+                        config={{ width: 600, speed: 50 }}
                     />
                 </div>
             </div>

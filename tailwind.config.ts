@@ -56,6 +56,7 @@ export default {
         "neon-pink": "hsl(var(--neon-pink))",
         "neon-purple": "hsl(var(--neon-purple))",
         "muted-neon-purple": "hsl(var(--muted-neon-purple))",
+        "muted-neon-cyan": "hsl(var(--muted-neon-cyan))",
         "space-dark": "hsl(var(--space-dark))",
         "space-mid": "hsl(var(--space-mid))",
         "glass-border": "hsl(var(--glass-border))",

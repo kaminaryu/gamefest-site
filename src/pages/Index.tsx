@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Gdgoc from "@/components/Gdgoc";
 import About from "@/components/About";
-import FestivalInfo from "@/components/FestivalInfo";
+import Info from "@/components/Info";
 import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
 import Footer from "@/components/Footer";
@@ -18,7 +18,7 @@ export default function Index() {
                 <Hero />
                 <Gdgoc />
                 <About />
-                <FestivalInfo />
+                <Info />
                 <Workshops />
                 <Competitions />
                 <Sponsors />

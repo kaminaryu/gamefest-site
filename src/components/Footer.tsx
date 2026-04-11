@@ -57,7 +57,9 @@ export default function Footer() {
                                 <a
                                     key={i}
                                     href={social.url}
-                                    className="bg-black hover:bg-black/50 p-2 rounded-3xl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-black hover:bg-black/50 p-2 rounded-3xl text-center"
                                 >
                                     <img src={social.logo} alt={social.alt} className="w-6 grayscale"/>
                                 </a>

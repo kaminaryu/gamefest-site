@@ -89,33 +89,37 @@ function Card({event}: {event: EventItem}) {
     return (
         <div
             key={event.name}
-            className="relative w-[25vw] glass-panel shimmer-sweep p-6 hover:glow-purple transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer"
+            className="min-w-[400px] max-w-[500px] flex-1 glass-panel shimmer-sweep p-6 hover:glow-purple transition-all duration-500 hover:-translate-y-1 animate-on-scroll group cursor-pointer"
         >
             <img src={event.thumbnail} alt={event.thumbnail} className="absolute top-4 right-4 w-24 h-auto object-contain" />
 
             {
                 event.category.map((category) => (
-                    <span className={`inline-block font-heading text-[10px] tracking-[0.2em] uppercase border rounded-full px-3 py-1 mb-4 mr-2 ${categoryColor[category]}`}>
+                    <span className={`inline-block font-heading text-[12px] tracking-[0.2em] uppercase border rounded-full px-3 py-1 mb-4 mr-2 ${categoryColor[category]}`}>
                         {category}
                     </span>
                 ))
             }
 
-            <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-neon-purple transition-colors">
+            <h3 className="font-heading text-3xl font-bold text-foreground group-hover:text-neon-purple transition-colors">
                 {event.name}
             </h3>
-            <h6 className="font-heading text-sm font-bold text-muted-foreground mb-3 group-hover:text-muted-neon-purple transition-colors">
+            <h6 className="font-heading text-md font-bold text-muted-foreground mb-3 group-hover:text-neon-cyan transition-colors">
                 {event.subname}
             </h6>
 
-            <p className="font-heading text-md tracking-[0.2em] text-neon-purple/60 mb-1">
+            <p className="font-heading text-lg tracking-[0.2em] text-neon-purple/60 mb-1">
                 {event.date}
             </p>
-            <p className="font-heading text-xs tracking-[0.2em] text-neon-purple/60 mb-3">
-                {event.day} · {event.time}
+            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan/60 mb-1">
+                {event.day}
+            </p>
+            <p className="font-heading text-sm tracking-[0.1em] text-neon-cyan/60 mb-3">
+                {event.time}
             </p>
 
-            <p className="font-body text-md text-muted-foreground leading-relaxed">
+
+            <p className="font-body text-lg text-muted-foreground leading-relaxed">
                 {event.description}
             </p>
         </div>

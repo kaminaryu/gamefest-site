@@ -1,5 +1,6 @@
 // this code is a mess, dont bother
 import { useRef, useEffect, useCallback } from "react";
+import { Partner } from "../Sponsors";
 
 // ─── EASY CONFIG ────────────────────────────────────────────────────────────
 interface CarouselConfig {
@@ -40,14 +41,9 @@ const CAROUSEL_CONFIG: CarouselConfig = {
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
-interface CarouselItem {
-  name: string;
-  src: string;
-  alt: string;
-}
 
 interface InfiniteCarouselProps {
-  items: CarouselItem[];
+  items: Partner[];
   /** Override any config value per instance */
   config?: Partial<CarouselConfig>;
   className?: string;
@@ -190,14 +186,15 @@ export default function InfiniteCarousel({
                     <div
                         key={`${item.name}-${index}`}
                         data-slot
-                        className="shrink-0 flex items-center justify-center transition-opacity duration-75"
+                        className="flex items-center justify-center transition-opacity "
                         style={{ width: cfg.itemWidth, height: cfg.height }}
                     >
                         <img
                             src={item.src}
-                            alt={item.alt}
+                            alt={item.name}
+                            title={item.name}
                             draggable={false}
-                            className="max-w-full max-h-full object-contain select-none grayscale"
+                            className="w-full h-full object-contain select-none grayscale"
                         />
                     </div>
                 ))}

@@ -26,13 +26,13 @@ export default function Hero() {
 
             {/* Tagline */}
             <p
-                className="font-body text-2xl md:text-3xl font-light tracking-wider mb-0 max-w-xl mx-auto hero-enter"
+                className="font-body text-2xl md:text-3xl tracking-wider mb-0 max-w-xl mx-auto hero-enter"
                 style={{ color: "rgba(241, 245, 249, 0.7)", animationDelay: "0.6s" }}
             >
                 The First Game Festival in IIUM
             </p>
             <p
-                className="font-body text-lg md:text-xl font-light tracking-wider mb-4 max-w-xl mx-auto hero-enter"
+                className="font-body text-lg md:text-xl tracking-wider mb-4 max-w-xl mx-auto hero-enter"
                 style={{ color: "rgba(241, 245, 249, 0.7)", animationDelay: "0.6s" }}
             >
                 By GDGoC IIUM
@@ -41,7 +41,7 @@ export default function Hero() {
 
             {/* Date + Location */}
             <p
-                className="font-heading text-md md:text-md tracking-[0.4em] uppercase mb-10 hero-enter"
+                className="text-md md:text-xl tracking-[0.4em] uppercase mb-10 hero-enter font-semibold"
                 style={{ color: "rgba(168, 85, 247, 0.6)", animationDelay: "0.8s" }}
             >
                 May 08 – 15, 2026 
@@ -51,7 +51,7 @@ export default function Hero() {
 
             {/* CTA */}
             <div className="hero-enter" style={{ animationDelay: "1s" }}>
-                <a href="#events" className="btn-glow text-sm md:text-base">
+                <a href="#gdgoc" className="btn-glow text-sm md:text-base">
                     Learn More
                 </a>
             </div>
