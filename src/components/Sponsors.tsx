@@ -35,6 +35,10 @@ const sponsors: Sponsor[] = [
         name: "Here Be Dragons", url: "https://www.herebedragonsgames.com/", tier: "silver",
         src: "logos/sponsors/hbd.png"
     },
+    {
+        name: "Zus Coffee", url: "https://www.zuscoffee.com/", tier: "silver",
+        src: "logos/sponsors/zus.png"
+    },
 ]
 
 const partners: Partner[] = [
