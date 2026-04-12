@@ -131,7 +131,7 @@ export default function Gdgoc() {
 function Attributes() {
     return (
         <div className="flex flex-col md:flex-col gap-2 md:gap-4">
-            <AttributeCards number="67" category={"Members"} />
+            <AttributeCards number="47" category={"Members"} />
             <AttributeCards number="9"  category={"Teams"} />
             <AttributeCards number="5+" category={"Programmes"} />
         </div>
@@ -144,7 +144,7 @@ function AttributeCards({number, category}: {number: string, category: string}) 
             <p className={`min-w-12 inline text-3xl lg:text-4xl section-heading ${gradientText}`}>
                 {number}
             </p>
-            <p className="text-muted-foreground text-xl lg:text-2xl">
+            <p className="text-muted-foreground text-xl lg:text-2xl font-bold">
                 {category}
             </p>
         </div>

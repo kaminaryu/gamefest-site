@@ -48,7 +48,7 @@ export default function Hero() {
                 className="text-md md:text-xl tracking-[0.4em] uppercase mb-10 hero-enter font-semibold text-neon-purple"
                 style={{ animationDelay: "0.8s" }}
             >
-                May 08 – 15, 2026 
+                May 08 – 16, 2026 
                 <br /> <p className="mb-2" />
                 Kulliyah of ICT, IIUM Gombak, Selangor
             </p>

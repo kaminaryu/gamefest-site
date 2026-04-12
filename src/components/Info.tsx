@@ -4,7 +4,7 @@ import SectionTitle from "./homepage/sectionTitle";
 const infoCards = [
     { icon: "📅", title: "Phase 1", detail: "May 08–15, 2026",   sub: "Workshop and Competiton Week" },
     { icon: "📅", title: "Phase 2", detail: "May 16, 2026",      sub: "Exhibition Day" },
-    { icon: "📍", title: "Venue",   detail: "Khulliyah ICT",     sub: "IIUM Gombak, Selangor" },
+    { icon: "📍", title: "Venue",   detail: "Kulliyah ICT",     sub: "IIUM Gombak, Selangor" },
     { icon: "🕐", title: "Time",    detail: "Fest Starts 09:00", sub: "Enjoy until 18:00" },
 ];
 
