@@ -85,7 +85,7 @@ export default function Gdgoc() {
                     <div className="flex flex-col lg:grid lg:grid-cols-[25%_75%] mx-0 md:mx-8 mt-8 gap-8">
                         <Attributes />
 
-                        <div className="flex flex-col justify-center gap-4">
+                        <div className="flex flex-col justify-center gap-4 justify-evenly">
                             <h1 className={`text-xl md:text-2xl border-l-4 pl-4 ${gradientText}`}>
                                 Google Developer Groups on Campus (GDGoC)
                                 <br />
