@@ -42,13 +42,13 @@ const sponsors: Sponsor[] = [
 ]
 
 const partners: Partner[] = [
+    { name: "Passion Replubic Games",   src: "/logos/partners/passionrepublic.png", },
+    { name: "Kaigan Games",   src: "/logos/partners/kaigangames.png", },
+    { name: "TODAK",   src: "/logos/partners/todak.png", },
     { name: "MDEC",   src: "/logos/partners/mdec.png", },
     { name: "DICE MMU",   src: "/logos/partners/dicemmu.png", },
     { name: "APU GDC",   src: "/logos/partners/apugdc.png", },
     { name: "Dreamonaut",   src: "/logos/partners/dreamonaut.png", },
-    { name: "TODAK",   src: "/logos/partners/todak.png", },
-    { name: "Passion Replubic Games",   src: "/logos/partners/passionrepublic_square.png", },
-    { name: "Kaigan Games",   src: "/logos/partners/kaigangames.png", },
     { name: "ICTSS",   src: "/logos/partners/ictss.png", },
 ];
 

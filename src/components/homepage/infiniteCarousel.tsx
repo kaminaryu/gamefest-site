@@ -22,10 +22,10 @@ const CAROUSEL_CONFIG: CarouselConfig = {
     height: 80,
 
     /** Gap between each logo item (px) */
-    gap: 0,
+    gap: 10,
 
     /** Width of each logo slot (px) */
-    itemWidth: 120,
+    itemWidth: 100,
 
     /** How wide the fade-out gradient is on each edge (px) */
     fadeWidth: 120,
