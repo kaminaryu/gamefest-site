@@ -72,7 +72,7 @@ export default function Gdgoc() {
     }, []);
 
     return (
-        <section id="gdgoc" className="relative py-16 md:py-16" ref={ref}>
+        <section id="gdgoc" className="relative py-16 md:py-32" ref={ref}>
             <div className="max-w-6xl mx-auto px-6 relative z-10">
 
                 <SectionTitle>
