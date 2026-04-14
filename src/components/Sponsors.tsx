@@ -41,16 +41,24 @@ const sponsors: Sponsor[] = [
     },
 ]
 
-const partners: Partner[] = [
+const communityPartners: Partner[] = [
     { name: "Passion Replubic Games",   src: "/logos/partners/passionrepublic.png", },
-    { name: "Kaigan Games",   src: "/logos/partners/kaigangames.png", },
-    { name: "TODAK",   src: "/logos/partners/todak.png", },
-    { name: "MDEC",   src: "/logos/partners/mdec.png", },
-    { name: "DICE MMU",   src: "/logos/partners/dicemmu.png", },
-    { name: "APU GDC",   src: "/logos/partners/apugdc.png", },
-    { name: "Dreamonaut",   src: "/logos/partners/dreamonaut.png", },
-    { name: "ICTSS",   src: "/logos/partners/ictss.png", },
+    { name: "Kaigan Games",             src: "/logos/partners/kaigangames.png", },
+    { name: "TODAK",                    src: "/logos/partners/todak.png", },
+    { name: "MDEC",                     src: "/logos/partners/mdec.png", },
+    { name: "DICE MMU",                 src: "/logos/partners/dicemmu.png", },
+    { name: "APU GDC",                  src: "/logos/partners/apugdc.png", },
+    { name: "Dreamonaut",               src: "/logos/partners/dreamonaut.png", },
 ];
+
+const mediaPartners: Partner[] = [
+    { name: "UDCY",         src: "/logos/partners/udcy.png", },
+    { name: "PSYCSTA",      src: "/logos/partners/psycsta.png", },
+    { name: "LEVEL UP",     src: "/logos/partners/levelup.png", },
+    { name: "ICTSS",        src: "/logos/partners/ictss.png", },
+    { name: "IIUM TODAY",   src: "/logos/partners/iiumtoday.png", },
+];
+
 
 export default function Sponsors() {
     const ref = useRef<HTMLDivElement>(null);
@@ -80,7 +88,16 @@ export default function Sponsors() {
                 
 
                 {/* Platinum tier */}
-                <div className="mb-6 animate-on-scroll">
+                <div className="mb-4 animate-on-scroll">
+                    {/* The Title */}
+                    <div className="flex items-center gap-4 mb-4 justify-center mt-4">
+                        <div className="h-[3px] flex-1 max-w-[75vw] lg:max-w-[30vw] bg-gradient-to-l from-neon-cyan/50 to-transparent" />
+                            <span className="font-heading text-xl text-neon-cyan">
+                                Sponsored By
+                            </span>
+                        <div className="h-[3px] flex-1 max-w-[75vw] lg:max-w-[30vw] bg-gradient-to-r from-neon-cyan/50 to-transparent" />
+                    </div>
+
                     {/* The Cards */}
                     <div className="flex flex-wrap justify-center gap-6">
                         {platinum.map((sponsor) => (
@@ -102,12 +119,12 @@ export default function Sponsors() {
                 {/* Gold tier */}
                 <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
                     {/* The Title */}
-                    <div className="flex items-center gap-4 mb-8 justify-center mt-12">
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(6, 182, 212, 0.3))" }} />
-                            <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-cyan/70">
-                                In Collaborations With
+                    <div className="flex items-center gap-4 mb-4 justify-center mt-4">
+                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-l from-neon-purple/50 to-transparent" />
+                            <span className="font-heading text-3xl text-neon-purple">
+                                ✦
                             </span>
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(6, 182, 212, 0.3))" }} />
+                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-r from-neon-purple/50 to-transparent" />
                     </div>
 
                     {/* The Cards */}
@@ -128,15 +145,15 @@ export default function Sponsors() {
                     </div>
                 </div>
 
-                {/* Gold tier */}
+                {/* Silver tier */}
                 <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
                     {/* The Title */}
-                    <div className="flex items-center gap-4 mb-8 justify-center mt-12">
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(6, 182, 212, 0.3))" }} />
-                            <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-cyan/70">
-                                With Supports From
+                    <div className="flex items-center gap-4 mb-4 justify-center mt-4">
+                        <div className="h-[3px] flex-1 max-w-[30vw] lg:max-w-[20vw] bg-gradient-to-l from-neon-cyan/50 to-transparent" />
+                            <span className="font-heading text-3xl text-neon-cyan">
+                                ✦
                             </span>
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(6, 182, 212, 0.3))" }} />
+                        <div className="h-[3px] flex-1 max-w-[30vw] lg:max-w-[20vw] bg-gradient-to-r from-neon-cyan/50 to-transparent" />
                     </div>
 
                     {/* The Cards */}
@@ -158,18 +175,34 @@ export default function Sponsors() {
                     </div>
                 </div>
 
-                {/* Silver Tier */}
+                {/* Media Partnerships */}
                 <div className="flex items-center gap-4 mb-8 justify-center mt-12">
-                    <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.3))" }} />
-                        <span className="font-heading text-xs tracking-[0.4em] uppercase text-neon-purple/70">
-                            In Partnership With
+                    <div className="h-[3px] flex-1 max-w-[20vw] bg-gradient-to-l from-neon-purple/50 to-transparent" />
+                        <span className="font-heading text-xl text-neon-purple">
+                            Community Partners
                         </span>
-                        <div className="h-px flex-1 max-w-[100px]" style={{ background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.3))" }} />
+                    <div className="h-[3px] flex-1 max-w-[20vw] bg-gradient-to-r from-neon-purple/50 to-transparent" />
                 </div>
+
                 <div className="flex justify-center">
                     <InfiniteCarousel
-                        items={partners}
+                        items={communityPartners}
                         config={{ width: 600, speed: 50 }}
+                    />
+                </div>
+
+                <div className="flex items-center gap-4 mb-8 justify-center mt-12">
+                    <div className="h-[3px] flex-1 max-w-[20vw] bg-gradient-to-l from-neon-cyan/50 to-transparent" />
+                        <span className="font-heading text-xl text-neon-cyan">
+                            Media Partners
+                        </span>
+                    <div className="h-[3px] flex-1 max-w-[20vw] bg-gradient-to-r from-neon-cyan/50 to-transparent" />
+                </div>
+
+                <div className="flex justify-center">
+                    <InfiniteCarousel
+                        items={mediaPartners}
+                        config={{ width: 600, speed: 50, reversed: true }}
                     />
                 </div>
             </div>

@@ -12,6 +12,7 @@ interface CarouselConfig {
     speed: number;
     minOpacity: number;
     // minScale: number;
+    reversed: boolean;
 }
 
 const CAROUSEL_CONFIG: CarouselConfig = {
@@ -38,6 +39,9 @@ const CAROUSEL_CONFIG: CarouselConfig = {
 
     /** Minimum scale for logos at the far edges (0–1) */
     // minScale:  0.9,
+
+    /** Check if wanna reversed direction **/
+    reversed: false,
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -119,37 +123,40 @@ export default function InfiniteCarousel({
         // wrapperRef.current?.addEventListener("mouseleave", onLeave);
 
         const animate = (timestamp: number) => {
-        if (lastTimeRef.current === null) lastTimeRef.current = timestamp;
-        const delta = timestamp - lastTimeRef.current;
-        lastTimeRef.current = timestamp;
+            if (lastTimeRef.current === null) lastTimeRef.current = timestamp;
 
-        if (!paused) {
-            offsetRef.current += (cfg.speed * delta) / 1000;
-            // Reset cleanly when we've scrolled one full copy
-            if (offsetRef.current >= singleWidth + cfg.gap) {
-            offsetRef.current -= singleWidth + cfg.gap;
-            }
-            if (trackRef.current) {
-            trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
-            }
-        }
+            const delta = timestamp - lastTimeRef.current;
+            lastTimeRef.current = timestamp;
 
-        updateOpacities();
-        rafRef.current = requestAnimationFrame(animate);
+            if (!paused) {
+                offsetRef.current += (cfg.speed * delta) / 1000;
+
+                // Reset cleanly when we've scrolled one full copy
+                if (offsetRef.current >= singleWidth + cfg.gap) {
+                    offsetRef.current -= singleWidth + cfg.gap;
+                }
+                if (trackRef.current) {
+                        trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+
+                }
+            }
+
+            updateOpacities();
+            rafRef.current = requestAnimationFrame(animate);
         };
 
         rafRef.current = requestAnimationFrame(animate);
         return () => {
-        cancelAnimationFrame(rafRef.current);
-        // wrapperRef.current?.removeEventListener("mouseenter", onEnter);
-        // wrapperRef.current?.removeEventListener("mouseleave", onLeave);
+            cancelAnimationFrame(rafRef.current);
+            // wrapperRef.current?.removeEventListener("mouseenter", onEnter);
+            // wrapperRef.current?.removeEventListener("mouseleave", onLeave);
         };
     }, [cfg.speed, singleWidth, cfg.gap, updateOpacities]);
 
     return (
         <div
             className={`relative overflow-hidden ${className} border-x-67`}
-            style={{ width: cfg.width, height: cfg.height }}
+            style={{ width: cfg.width, height: cfg.height, transform: cfg.reversed ? "scaleX(-1)" : "none" }}
             ref={wrapperRef}
         >
             {/* Left line */}
@@ -187,14 +194,14 @@ export default function InfiniteCarousel({
                         key={`${item.name}-${index}`}
                         data-slot
                         className="flex items-center justify-center transition-opacity "
-                        style={{ width: cfg.itemWidth, height: cfg.height }}
+                        style={{ width: cfg.itemWidth, height: cfg.height, transform: cfg.reversed ? "scaleX(-1)" : "none" }}
                     >
                         <img
                             src={item.src}
                             alt={item.name}
                             title={item.name}
                             draggable={false}
-                            className="w-full h-full object-contain select-none grayscale"
+                            className="w-full h-full object-contain select-none"
                         />
                     </div>
                 ))}
