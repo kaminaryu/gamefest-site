@@ -16,6 +16,7 @@ export default function EventPoster({setIsPosterOpen, src, url}: Poster) {
         };
 
         window.addEventListener('keydown', handleKey);
+        // detach the event listener when component is no more
         return () => window.removeEventListener('keydown', handleKey);
     }, []);
 
@@ -38,6 +39,7 @@ export default function EventPoster({setIsPosterOpen, src, url}: Poster) {
         animate(".animate-fade", animateFadeProp);
     }, []);
 
+    // animation but in reversed
     const playClosingAnimation = () => {
         animate(".animate-pop", {
             ...animatePopProp,
