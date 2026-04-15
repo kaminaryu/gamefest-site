@@ -85,7 +85,7 @@ export default function Gdgoc() {
                     <div className="flex flex-col lg:grid lg:grid-cols-[25%_75%] mx-0 md:mx-8 mt-8 gap-8">
                         <Attributes />
 
-                        <div className="flex flex-col justify-center gap-4">
+                        <div className="flex flex-col justify-center gap-4 justify-evenly">
                             <h1 className={`text-xl md:text-2xl border-l-4 pl-4 ${gradientText}`}>
                                 Google Developer Groups on Campus (GDGoC)
                                 <br />
@@ -131,9 +131,9 @@ export default function Gdgoc() {
 function Attributes() {
     return (
         <div className="flex flex-col md:flex-col gap-2 md:gap-4">
-            <AttributeCards number="47" category={"Members"} />
+            <AttributeCards number="46" category={"Members"} />
             <AttributeCards number="9"  category={"Teams"} />
-            <AttributeCards number="5+" category={"Programmes"} />
+            <AttributeCards number="15+" category={"Programmes"} />
         </div>
     )
 }
