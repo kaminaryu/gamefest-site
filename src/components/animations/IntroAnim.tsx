@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, RefObject } from "react";
 import { createPortal } from "react-dom";
-import { animate } from "animejs";
+import { animate, utils, splitText, stagger, createTimeline } from "animejs";
 
 export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTMLImageElement>}) {
     const [introFinished, setIntroFinished] = useState(false);
@@ -34,9 +34,19 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
  
     const onLogoLoad = () => {
         const actualRect = actualLogoRef.current.getBoundingClientRect();
-        const scale = 1;
-        const bigW = actualRect.width * scale;
-        const bigH = actualRect.height * scale;
+        const bigW = actualRect.width
+        const bigH = actualRect.height
+
+        const isMedium = window.matchMedia("(min-width: 768px)").matches;
+        const isLarge = window.matchMedia("(min-width: 1024px)").matches;
+        let startingScale = 1.1;
+
+        if (isMedium) {
+            startingScale = 1.25;
+        }
+        else if (isLarge) {
+            startingScale = 1.5;
+        }
 
         const el = animatedLogoRef.current;
         el.style.position = "fixed";
@@ -46,40 +56,57 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
 
         animate(el, {
             opacity: [0, 1],
+            filter: {from: 'blur(20px)'},
+            scale: [0, startingScale],
             duration: 1000,
-            ease: "inQuad",
-            onComplete: () => playAnim(),
+            ease: "outQuad",
+            onComplete: () => playAnim(startingScale),
         });
     };
 
-    const playAnim = () => {
+
+    const playAnim = (startingScale: number) => {
         const actualRect = actualLogoRef.current.getBoundingClientRect();
         const animatedLogo = animatedLogoRef.current;
+        // const { words } = splitText('#tagline', { chars: { wrap: true}});
+        const revealTimeline = createTimeline();
 
-        const isLg = window.matchMedia("(min-width: 768px)").matches;
-        let startingScale = 1.1;
 
-        if (isLg) {
-            startingScale = 1.5;
-        }
-
-        animate(animatedLogo, {
-            left: actualRect.left,
-            top: actualRect.top,
-            width: actualRect.width,
-            height: actualRect.height,
-            scale: [startingScale, 1],
-            duration: 1000,
-            delay: 500,
-            ease: "inOutExpo",
-            onComplete: () => fishingIntro(animatedLogo),
-        });
-
-        animate(".background", {
-            opacity: [1, 0],
-            duration: 1500,
-            ease: "inQuad",
-        });
+        revealTimeline.set('#tagline', {y: -100, opacity: 0})
+            .set('.diamond-icon', {opacity: 0})
+            .add(animatedLogo, {
+                left: actualRect.left,
+                top: actualRect.top,
+                width: actualRect.width,
+                height: actualRect.height,
+                scale: [startingScale, 1],
+                duration: 1000,
+                delay: 500,
+                ease: "inOutExpo",
+            })
+            .add(".background-black", {
+                opacity: [1, 0],
+                duration: 1000,
+                ease: "outQuad",
+            }, '-=500')
+            .add(".background-pattern", {
+                opacity: [0.20, 0],
+                duration: 1000,
+                ease: "outQuad",
+                onComplete: () => fishingIntro(animatedLogo),
+            }, '<<')
+            .add('#tagline', {
+                y: {to: 0},
+                opacity: 1,
+                duration: 500,
+                ease: 'outExpo',
+            }, '<<+=250')
+            .add('.diamond-icon', {
+                x: {from: stagger([-20, 20])},
+                opacity: 1,
+                duration: 500,
+                ease: 'outExpo',
+            })
     };
 
 
@@ -110,8 +137,8 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
             {
                 !introFinished &&
                     <>
-                        <div className="background fixed inset-0 bg-black bg-cover bg-fixed bg-center z-[10]" />
-                        <div className="background fixed inset-0 opacity-20 bg-[url('/neonBG.jpg')] bg-cover bg-fixed bg-center z-[20]" />
+                        <div className="background-black fixed inset-0 bg-black bg-cover bg-fixed bg-center z-[10]" />
+                        <div className="background-pattern fixed inset-0 opacity-20 bg-[url('/neonBG.jpg')] bg-cover bg-fixed bg-center z-[20]" />
 
                         <div className="fixed inset-0 z-[30]">
                             <img 

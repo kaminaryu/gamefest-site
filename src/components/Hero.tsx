@@ -19,23 +19,24 @@ export default function Hero() {
             />
 
             <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-                <div className="flex justify-center gap-4">
-                    <span className="text-xl md:text-3xl animate-pulse text-neon-purple"> ✦ </span>
+                <div className="flex justify-center gap-4 mt-8">
+                    <span className="diamond-icon text-xl md:text-3xl text-neon-purple"> ✦ </span>
 
                     <p
+                        id="tagline"
                         className="text-xl md:text-3xl tracking-[0.15em] pl-[0.15em] md:tracking-[0.3em] md:pl-[0.15em] 
-                        uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text mb-0 text-center"
+                        uppercase bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text text-center"
                     >
                             Create. Play. Innovate.
                     </p>
 
-                    <span className="text-xl md:text-3xl animate-pulse text-neon-cyan"> ✦ </span>
+                    <span className="diamond-icon text-xl md:text-3xl text-neon-cyan"> ✦ </span>
                 </div>
 
                 <div className="relative inline-block my-8">
                     <img
                         ref={actualLogoRef} src='/gameFestLogo.png' alt="GameFest" 
-                        className="w-[32rem] md:w-[36rem] lg:w-[64rem] h-auto object-contain opacity-0"
+                        className="w-[32rem] md:w-[36rem] lg:w-[48rem] h-auto object-contain opacity-0"
                     />
                 </div>
 
