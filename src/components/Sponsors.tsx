@@ -56,7 +56,7 @@ const mediaPartners: Partner[] = [
     { name: "PSYCSTA",      src: "/logos/partners/psycsta.png", },
     { name: "LEVEL UP",     src: "/logos/partners/levelup.png", },
     { name: "ICTSS",        src: "/logos/partners/ictss.png", },
-    { name: "IIUM TODAY",   src: "/logos/partners/iiumtoday.png", },
+    { name: "IIUM TODAY",   src: "/logos/partners/iiumtoday.jpeg", },
 ];
 
 
