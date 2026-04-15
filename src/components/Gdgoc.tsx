@@ -131,9 +131,9 @@ export default function Gdgoc() {
 function Attributes() {
     return (
         <div className="flex flex-col md:flex-col gap-2 md:gap-4">
-            <AttributeCards number="47" category={"Members"} />
+            <AttributeCards number="46" category={"Members"} />
             <AttributeCards number="9"  category={"Teams"} />
-            <AttributeCards number="5+" category={"Programmes"} />
+            <AttributeCards number="15+" category={"Programmes"} />
         </div>
     )
 }
