@@ -63,7 +63,7 @@ export default function Competitions() {
         <section id="events" className="relative py-24 md:pt-32 pb-16" ref={ref}>
             <div className="container mx-auto px-6 relative z-[10]">
                 <SectionTitle>
-                    The <span className="text-neon-purple"> Competitions </span>
+                    The <span className="text-neon-purple">Competitions</span>
                 </SectionTitle>
 
                 {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}

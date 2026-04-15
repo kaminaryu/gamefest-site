@@ -21,7 +21,7 @@ export default function About() {
             <div className="max-w-6xl mx-auto px-6 relative z-10">
 
                 <SectionTitle>
-                    What is <span className="text-neon-cyan"> GameFest? </span>
+                    What is <span className="text-neon-cyan">GameFest?</span>
                 </SectionTitle>
 
                 <div className="glass-panel shimmer-sweep p-10 md:p-12 animate-on-scroll">
