@@ -82,7 +82,7 @@ export default function Events() {
         <section id="events" className="relative  md:pt-32" ref={ref}>
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle>
-                    The <span className="text-neon-cyan"> Workshops </span>
+                    The <span className="text-neon-cyan">Workshops</span>
                 </SectionTitle>
 
                 {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
