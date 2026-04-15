@@ -133,7 +133,7 @@ function Card({event}: {event: EventItem}) {
                     className="absolute inset-0 bg-no-repeat bg-center opacity-15" 
                 />
 
-                <div className="opacity-100">
+                <div className="relative z-10">
                     {
                         event.category.map((category) => (
                             <span className={`inline-block font-heading text-[12px] tracking-[0.2em] uppercase border rounded-full px-3 py-1 mb-4 mr-2 ${categoryColor[category]}`}>
