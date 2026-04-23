@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Gdgoc from "@/components/Gdgoc";
 import About from "@/components/About";
 import Info from "@/components/Info";
+import Timeline from "@/components/Timeline";
 import Workshops from "@/components/Workshops";
 import Sponsors from "@/components/Sponsors";
 import Footer from "@/components/Footer";
@@ -36,7 +37,7 @@ export default function Index() {
                 <Hero />
                 <Gdgoc />
                 <About />
-                <Info />
+                <Timeline />
                 <Workshops />
                 <Competitions />
                 <Sponsors />
