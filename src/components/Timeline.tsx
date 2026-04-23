@@ -78,7 +78,7 @@ export default function Timeline() {
 
                 <div className="relative">
                     {/* Vertical line - Adjusted top/bottom to prevent overhang */}
-                    <div className="absolute left-[7rem] top-0 bottom-0 w-px bg-white/20" />
+                    <div className="absolute left-[6.95rem] top-0 bottom-0 w-px bg-white/20" />
 
                     <div className="flex flex-col gap-8">
                         {timelineEvents.map((ev, i) => (
