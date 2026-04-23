@@ -26,23 +26,25 @@ export default function About() {
 
                 <div className="glass-panel shimmer-sweep p-10 md:p-12 animate-on-scroll">
                     <div className="flex justify-center">
-                        <p className="text-center font-body text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mb-10 text-center">
-                            GameFest 2026 is the inaugural game festival hosted at the International Islamic University Malaysia (IIUM), 
-                            organized by GDGOC IIUM. It serves as a premier platform to celebrate the intersection of 
-                            technology, creativity, and gaming culture.
+                        <p className="text-justify font-body text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-5xl mb-4 text-center">
+                            <p>
+                                GameFest 2026 is the inaugural game festival hosted at the International Islamic University Malaysia (IIUM), 
+                                organized by GDGOC IIUM. Experience a diverse lineup of events, including technical workshops,
+                                competitive hackathons, interactive exhibitions, and creative booths.
+                            </p>
+                            <p className="mt-6 text-center"> The festival lasts for a week and is seperated into two phases: </p>
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <InfoCard 
-                            text="Promoting Game Development Culture"
-                            desc="To foster a vibrant community of student developers and encourage the growth of game design skills on campus."
+                            text="Phase One: Fun Week"
+                            desc="Whole week dedicated to learning and competing — GameDev + ML/AI Workshops, GameDev + UI/UX Competitions and More!"
                             color="neon-purple"
                         />
                         <InfoCard
-                            text="Raising Sector Awareness"
-                            desc="To highlight the diverse and multidisciplinary nature of the creative multimedia sector 
-                                  that involves not just coding, but also arts, music, and creative production."
+                            text="Phase Two: Exhibition Day"
+                            desc="Whole day filled with activities for anyone to enjoy for free! Gaming booth, Art booth, GameJam Game Showcasing, and many more awaits!"
                             color="neon-cyan"
                         />
                     </div>
