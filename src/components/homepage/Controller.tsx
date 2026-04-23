@@ -76,7 +76,7 @@ function FloatingScene({ scrollYProgress }: { scrollYProgress: MotionValue<numbe
 
 export default function FloatingController({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
     return (
-        <div className="absolute inset-0 pointer-events-none opacity-100">
+        <div className="absolute inset-0 pointer-events-none opacity-75">
             <Canvas
                 camera={{ position: [0, 0, 10], fov: 60 }}
                 gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
