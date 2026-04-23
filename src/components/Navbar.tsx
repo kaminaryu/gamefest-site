@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
             scrolled
-            ? "glass-panel-light border-b py-3"
+            ? "glass-panel-light border-b py-2"
             : "bg-transparent py-5"
         }`}
         style={scrolled ? { borderColor: "rgba(168, 85, 247, 0.1)" } : {}}
