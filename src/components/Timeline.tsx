@@ -18,7 +18,7 @@ const timelineEvents: timelineProp[] = [
         date: "May 08",
         tag: "Live Session",
         title: "GameFest Kick-Off Session",
-        description: "Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. ",
+        description: "A live session where we introduce GameFest to you!",
         color: "neon-cyan",
     },
     {
@@ -46,7 +46,7 @@ const timelineEvents: timelineProp[] = [
         date: "May 16",
         tag: "Phase 2",
         title: "Exhibition Day",
-        description: "Whole day filled with activities — Game booth, Art booth, GameJam Game Showcasing, and many more!",
+        description: "Whole day filled with tons of activities! Join in on the fun, free for all!",
         color: "white",
         specialTitle: true,
     },
