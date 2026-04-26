@@ -57,7 +57,7 @@ function FloatingScene({ scrollYProgress }: { scrollYProgress: MotionValue<numbe
         },
         {
             // i made ts myself tqvm -ryu
-            url: "/models/joystick.glb",
+            url: "/models/new_joystick.glb",
             position: isMobile ? [-2, -5, -2] : [-4, -4, 0],
             rotation: [0.4, 3.0, -0.1],
             scale: isMobile ? 0.15 : 0.2,
@@ -95,4 +95,4 @@ export default function FloatingController({ scrollYProgress }: { scrollYProgres
 
 useGLTF.preload("/models/xbox_controller_lp.glb")
 useGLTF.preload("/models/snes_controller.glb")
-useGLTF.preload("/models/joystick.glb")
+useGLTF.preload("/models/new_joystick.glb")
