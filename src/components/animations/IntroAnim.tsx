@@ -59,6 +59,7 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
             filter: {from: 'blur(20px)'},
             scale: [0, startingScale],
             duration: 1000,
+            delay: 500,
             ease: "outQuad",
             onComplete: () => playAnim(startingScale),
         });
