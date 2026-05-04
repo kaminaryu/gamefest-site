@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, RefObject } from "react";
 import { createPortal } from "react-dom";
 import { animate, utils, splitText, stagger, createTimeline } from "animejs";
+import { startLogoFloatingAnim } from "../Hero";
 
 export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTMLImageElement>}) {
     const [introFinished, setIntroFinished] = useState(false);
@@ -84,6 +85,7 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
                 duration: 1000,
                 delay: 500,
                 ease: "inOutExpo",
+                onComplete: () => finishingIntro(animatedLogo),
             })
             .add(".background-black", {
                 opacity: [1, 0],
@@ -94,14 +96,13 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
                 opacity: [0.20, 0],
                 duration: 1000,
                 ease: "outQuad",
-                onComplete: () => fishingIntro(animatedLogo),
             }, '<<')
             .add('#tagline', {
                 y: {to: 0},
                 opacity: 1,
                 duration: 500,
                 ease: 'outExpo',
-            }, '<<+=250')
+            }, '<<-=500')
             .add('.diamond-icon', {
                 x: {from: stagger([-20, 20])},
                 opacity: 1,
@@ -111,10 +112,12 @@ export default function IntroAnim({actualLogoRef}: {actualLogoRef: RefObject<HTM
     };
 
 
-    const fishingIntro = (ani: HTMLImageElement) => {
+    const finishingIntro = (ani: HTMLImageElement) => {
         ani.style.opacity = "0";
         actualLogoRef.current.style.opacity = "1";
         document.documentElement.style.overflow = "";
+
+        startLogoFloatingAnim();
 
         scrollDown();
         setIntroFinished(true);
