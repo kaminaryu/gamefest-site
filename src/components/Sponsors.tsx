@@ -4,8 +4,8 @@ import InfiniteCarousel from "./homepage/infiniteCarousel";
 
 interface Sponsor {
     name: string,
-    url:string,
-    tier: "platinum" | "gold" | "silver",
+    url: string,
+    tier: string,
     src: string,
 }
 
@@ -15,6 +15,10 @@ export interface Partner {
 }
 
 const sponsors: Sponsor[] = [
+    {
+        name: "SerpApi", url: "https://www.serpapi.com/", tier: "diamond",
+        src: "logos/sponsors/SerpAPI.svg"
+    },
     {
         name: "SEAGM", url: "https://www.seagm.com/", tier: "platinum",
         src: "logos/sponsors/seagm_white.png"
@@ -75,6 +79,7 @@ export default function Sponsors() {
         return () => observer.disconnect();
     }, []);
 
+    const diamond = sponsors.filter((s) => s.tier === "diamond");
     const platinum = sponsors.filter((s) => s.tier === "platinum");
     const gold = sponsors.filter((s) => s.tier === "gold");
     const silver = sponsors.filter((s) => s.tier === "silver");
@@ -87,28 +92,58 @@ export default function Sponsors() {
                 </SectionTitle>
                 
 
-                {/* Platinum tier */}
+                {/* Diamond tier */}
                 <div className="mb-4 animate-on-scroll">
                     {/* The Title */}
                     <div className="flex items-center gap-4 mb-4 justify-center mt-4">
-                        <div className="h-[3px] flex-1 max-w-[75vw] lg:max-w-[30vw] bg-gradient-to-l from-neon-cyan/50 to-transparent" />
-                            <span className="font-heading text-xl text-neon-cyan">
-                                Sponsored By
+                        <div className="h-[3px] flex-1 max-w-[75vw] lg:max-w-[30vw] bg-gradient-to-r from-transparent to-neon-purple/50" />
+                            <span className="font-heading text-xl bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text">
+                                Powered By
                             </span>
                         <div className="h-[3px] flex-1 max-w-[75vw] lg:max-w-[30vw] bg-gradient-to-r from-neon-cyan/50 to-transparent" />
                     </div>
 
                     {/* The Cards */}
                     <div className="flex flex-wrap justify-center gap-6">
+                        {diamond.map((sponsor) => (
+                            <a
+                                key={sponsor.name}
+                                href={sponsor.url}
+                                className="flex flex-col justify-center items-center w-96 glass-panel-light shimmer-sweep glow-cyan-strong
+                                           px-12 py-8 text-center hover:-translate-y-2 transition-all duration-500 min-w-[220px]"
+                            >
+                                <img src={sponsor.src} alt={sponsor.name} className="h-24 w-auto mx-auto mb-4"/>
+
+                                <span className="font-heading text-2xl md:text-3xl font-semibold tracking-[0.15em] bg-gradient-to-r from-neon-purple to-neon-cyan text-transparent bg-clip-text block h-12 flex items-center justify-center">
+                                    {sponsor.name}
+                                </span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Platinum tier */}
+                <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
+                    {/* The Title */}
+                    <div className="flex items-center gap-4 mb-4 justify-center mt-4">
+                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-l from-neon-cyan/50 to-transparent" />
+                            <span className="font-heading text-xl text-neon-cyan">
+                                Sponsored By
+                            </span>
+                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-r from-neon-cyan/50 to-transparent" />
+                    </div>
+
+                    {/* The Cards */}
+                    <div className="flex flex-wrap justify-center gap-5">
                         {platinum.map((sponsor) => (
                             <a
                                 key={sponsor.name}
                                 href={sponsor.url}
-                                className="flex flex-col justify-center items-center w-96 glass-panel-light shimmer-sweep glow-cyan-strong px-12 py-8 text-center hover:-translate-y-2 transition-all duration-500 min-w-[220px]"
+                                className="w-72 px-2 py-6 glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
                             >
-                                <img src={sponsor.src} alt={sponsor.name} className="h-24 w-auto mx-auto mb-4"/>
+                                <img src={sponsor.src} alt={sponsor.name} className="h-20 w-full mx-auto object-contain "/>
 
-                                <span className="font-heading text-2xl md:text-3xl font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
+                                <span className="h-6 font-heading text-md md:text-lg mt-4 font-semibold tracking-[0.15em] text-foreground/80 block flex items-center justify-center">
                                     {sponsor.name}
                                 </span>
                             </a>
@@ -120,11 +155,11 @@ export default function Sponsors() {
                 <div className="animate-on-scroll" style={{ transitionDelay: "200ms" }}>
                     {/* The Title */}
                     <div className="flex items-center gap-4 mb-4 justify-center mt-4">
-                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-l from-neon-purple/50 to-transparent" />
+                        <div className="h-[3px] flex-1 max-w-[30vw] lg:max-w-[20vw] bg-gradient-to-l from-neon-purple/50 to-transparent" />
                             <span className="font-heading text-3xl text-neon-purple">
                                 ✦
                             </span>
-                        <div className="h-[3px] flex-1 max-w-[60vw] lg:max-w-[25vw] bg-gradient-to-r from-neon-purple/50 to-transparent" />
+                        <div className="h-[3px] flex-1 max-w-[30vw] lg:max-w-[20vw] bg-gradient-to-r from-neon-purple/50 to-transparent" />
                     </div>
 
                     {/* The Cards */}
@@ -133,11 +168,12 @@ export default function Sponsors() {
                             <a
                                 key={sponsor.name}
                                 href={sponsor.url}
-                                className="w-72 px-2 py-6 glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
+                                className="w-[10rem] flex flex-col items-center px-4 py-4 gap-4 glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
                             >
-                                <img src={sponsor.src} alt={sponsor.name} className="h-20 w-full mx-auto object-contain "/>
+                                <img src={sponsor.src} alt={sponsor.name} className="h-16 max-w-[8rem] w-full object-contain"/>
 
-                                <span className="h-6 font-heading text-md md:text-lg mt-4 font-semibold tracking-[0.15em] text-foreground/80 block flex items-center justify-center">
+                                {/* <span className="font-heading text-sm md:text-base font-semibold tracking-[0.15em] text-foreground/80"> */}
+                                <span className="font-heading text-sm md:text-md mt-0 font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
                                     {sponsor.name}
                                 </span>
                             </a>
@@ -157,20 +193,20 @@ export default function Sponsors() {
                     </div>
 
                     {/* The Cards */}
-                    <div className="flex flex-wrap justify-center gap-5">
+                    <div className="flex flex-col justify-center items-center gap-5">
                         {silver.map((sponsor) => (
                             <a
                                 key={sponsor.name}
-                                href={sponsor.url}
-                                className="w-36 px-8 py-4  glass-panel-light shimmer-sweep glow-cyan text-center hover:-translate-y-1 transition-all duration-500"
-                            >
-                                <img src={sponsor.src} alt={sponsor.name} className="h-16 w-full mx-auto object-contain"/>
-
-                                {/* <span className="font-heading text-sm md:text-base font-semibold tracking-[0.15em] text-foreground/80"> */}
-                                <span className="font-heading text-sm md:text-md mt-4 font-semibold tracking-[0.15em] text-foreground/80 block h-12 flex items-center justify-center">
-                                    {sponsor.name}
-                                </span>
-                            </a>
+                                    href={sponsor.url}
+                                    className="flex flex-row items-center w-72 px-8 py-4 glass-panel-light shimmer-sweep glow-cyan hover:-translate-y-1 transition-all duration-500"
+                                >
+                                    <div className="w-[30%] flex items-center justify-center">
+                                        <img src={sponsor.src} alt={sponsor.name} className="h-12 md:h-14 w-full object-contain"/>
+                                    </div>
+                                    <span className="w-[70%] font-heading text-sm md:text-md pl-4 font-semibold tracking-[0.15em] text-foreground/80 flex items-center justify-start">
+                                        {sponsor.name}
+                                    </span>
+                                </a>
                         ))}
                     </div>
                 </div>
