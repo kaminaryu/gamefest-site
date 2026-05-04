@@ -56,7 +56,7 @@ export default function Hero() {
 
                 {/* SerpAPI Special Place */}
                 <a 
-                    className="flex flex-col md:flex-row justify-center items-center gap-3 mb-8 opacity-60 
+                    className="flex flex-col md:flex-row justify-center items-center gap-3 mb-8 opacity-80 
                                hover:opacity-100 transition-opacity duration-300 py-4 hover:cursor-pointer"
                     href="https://serpapi.com/"
                 >
