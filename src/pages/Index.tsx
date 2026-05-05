@@ -28,7 +28,7 @@ export default function Index() {
                     style={{ y: backgroundY }} 
                     className="absolute inset-0 opacity-20 bg-[url('/neonBG.jpg')] bg-cover bg-center" 
                 />
-                {/* 2. Pass the scroll progress to the controller */}
+                {/* Pass the scroll progress to the controller */}
                 <FloatingController scrollYProgress={scrollYProgress} />
             </div>
 

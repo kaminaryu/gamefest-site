@@ -20,12 +20,12 @@ export default function Navbar() {
 
     return (
         <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-            scrolled
-            ? "glass-panel-light border-b py-2"
-            : "bg-transparent py-5"
-        }`}
-        style={scrolled ? { borderColor: "rgba(168, 85, 247, 0.1)" } : {}}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+                scrolled
+                ? "glass-panel-light border-b py-2"
+                : "bg-transparent py-5"
+            }`}
+            style={scrolled ? { borderColor: "rgba(168, 85, 247, 0.1)" } : {}}
         >
             <div className="container mx-auto flex items-center justify-between px-6">
                 {/* Left - Logo */}

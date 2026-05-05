@@ -18,19 +18,10 @@ export default function Hero() {
     const actualLogoRef = useRef<HTMLImageElement>(null);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Subtle grid overlay */}
-            <div
-                className="absolute inset-0 opacity-[0.02]"
-                style={{
-                backgroundImage:
-                    "linear-gradient(rgba(168, 85, 247, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, 0.3) 1px, transparent 1px)",
-                backgroundSize: "80px 80px",
-                }}
-            />
-
+        <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden mt-16 p-8">
             <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-                <div className="flex justify-center gap-4 mt-8">
+                {/* Top Tagline */}
+                <div className="flex justify-center gap-4 mt-0">
                     <span className="diamond-icon text-xl md:text-3xl text-neon-purple"> ✦ </span>
 
                     <p
@@ -56,7 +47,7 @@ export default function Hero() {
 
                 {/* SerpAPI Special Place */}
                 <a 
-                    className="flex flex-col md:flex-row justify-center items-center gap-3 mb-8 opacity-80 
+                    className="flex flex-col md:flex-row justify-center items-center gap-3 mb-6 hover:brightness-[140%]
                                hover:opacity-100 transition-opacity duration-300 py-4 hover:cursor-pointer"
                     href="https://serpapi.com/"
                 >
@@ -72,7 +63,7 @@ export default function Hero() {
                         <div className="h-px w-36 bg-gradient-to-l from-transparent to-neon-purple" />
                     </div>
 
-                        <img src="/PoweredBy.svg" alt="Powered By SerpAPI" className="w-[16rem] md:w-[24rem]" />
+                        <img src="/PoweredBy.svg" alt="Powered By SerpAPI" className="w-[16rem] md:w-[28rem]" />
 
                     {/* Desktop Line */}
                     <div className="hidden md:block h-[2px] w-24 bg-gradient-to-l from-transparent to-neon-purple" />
@@ -90,7 +81,7 @@ export default function Hero() {
 
                 {/* Tagline */}
                 <p
-                    className="font-body text-2xl md:text-3xl tracking-wider mb-0 max-w-xl mx-auto hero-enter"
+                    className="font-body text-2xl md:text-3xl tracking-wider max-w-xl mx-auto hero-enter"
                     style={{ color: "rgba(241, 245, 249, 0.9)", animationDelay: "0.6s" }}
                 >
                     The First Game Festival in IIUM
@@ -105,7 +96,7 @@ export default function Hero() {
 
                 {/* Date + Location */}
                 <p
-                    className="flex flex-col tracking-[0.4em] uppercase mt-8 mb-10 hero-enter font-semibold text-neon-purple"
+                    className="flex flex-col tracking-[0.4em] uppercase mt-4 mb-10 hero-enter font-semibold text-neon-purple"
                     style={{ animationDelay: "0.8s" }}
                 >
                     <p className="text-2xl md:text-3xl mb-2">
