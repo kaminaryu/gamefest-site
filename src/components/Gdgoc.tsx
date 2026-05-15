@@ -79,7 +79,7 @@ export default function Gdgoc() {
                     Meet The <span className={gradientText}> Organizers </span>
                 </SectionTitle>
 
-                <div className="flex flex-col justify-center aign-center glass-panel shimmer-sweep p-6 md:p-10 animate-on-scroll">
+                <div className="flex flex-col justify-center align-center glass-panel shimmer-sweep p-6 md:p-10 animate-on-scroll">
                     <img src="gdgociium.png" alt="GDGoC IIUM 25/26 LineUp" className="h-auto w-auto rounded-2xl"/>
 
                     <div className="flex flex-col lg:grid lg:grid-cols-[25%_75%] mx-0 md:mx-8 mt-8 gap-8">

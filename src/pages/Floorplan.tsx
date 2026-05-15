@@ -1,18 +1,15 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Gdgoc from "@/components/Gdgoc";
-import About from "@/components/About";
-import Timeline from "@/components/Timeline";
-import Workshops from "@/components/Workshops";
-import Sponsors from "@/components/Sponsors";
-import Footer from "@/components/Footer";
-import Competitions from "@/components/Competitions";
 import FloatingController from "@/components/homepage/Controller";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import FPNavbar from "@/components/floorplan/FPNavbar";
+import PitchingRoom from "@/components/floorplan/PitchingRoom";
+import ArtistGame from "@/components/floorplan/ArtistGame";
+import BoardGames from "@/components/floorplan/BoardGames";
+import SponsorsGJ from "@/components/floorplan/SponsorsGJ";
 import PageButton from "@/components/homepage/PageButton";
+import Venue from "@/components/floorplan/Venue";
 
-export default function Index() {
+export default function FloorPlan() {
     const containerRef = useRef(null)
 
     const { scrollYProgress } = useScroll();
@@ -33,18 +30,15 @@ export default function Index() {
             </div>
 
             <div className="relative z-10">
-                <Navbar />
-                <Hero />
-                <Gdgoc />
-                <About />
-                <Timeline />
-                <Workshops />
-                <Competitions />
-                <Sponsors />
-                <Footer />
+                <FPNavbar />
+                <Venue />
+                <PitchingRoom />
+                <SponsorsGJ />
+                <ArtistGame />
+                <BoardGames />
             </div>
 
-            <PageButton href="/floorplan" src="/location.png" />
+            <PageButton href="/" src="/home.png" />
         </div>
     );
 };
